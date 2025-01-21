@@ -1,4 +1,6 @@
 flags=--std=c++20 -pthread -O0 -g -fopenmp
+TARGET=lab4.exe
+SRC=entrypoint.cpp vector_mod.cpp randomize.cpp test.cpp num_threads.cpp mod_ops.cpp performance.cpp
 
 a.out:mod_ops.o num_threads.o vector_mod.o test.o randomize.o performance.o entrypoint.o
 	g++ $(flags) $^ -o $@
@@ -23,3 +25,12 @@ performance.o:performance.cpp performance.h randomize.h config.h
 
 entrypoint.o:entrypoint.cpp performance.h test.h config.h
 	g++ $(flags) -c entrypoint.cpp
+
+$(TARGET): $(SRC)
+	g++ $(flags) -o $(TARGET) $(SRC)
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -f $(TARGET) *.o
