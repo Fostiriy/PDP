@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++20
+CXXFLAGS = -std=c++20 -pthread
 TARGET = lab5.exe
 SRC = lab_5.cpp
 
