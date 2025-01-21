@@ -9,6 +9,7 @@
 #include <random>
 #include <vector>
 #include <omp.h>
+#include <cstring>
 
 using namespace std;
 
