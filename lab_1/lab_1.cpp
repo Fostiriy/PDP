@@ -74,10 +74,10 @@ int main(int argc, char** argv)
 			<< ", duration = " << t2 << "s, acceleration = " << duration1 / t2 << "\n";
 		output << i << "," << t2 << "," << (duration1 / t2);
 		
-if (i < std::thread::hardware_concurrency())
-		{
-			output << "\n";
-		}
+	if (i < std::thread::hardware_concurrency())
+	{
+		output << "\n";
+	}
 	}
 
 	output.close();
